@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Owl</title>
+<style>
+  body {
+    margin: 0;
+    background: #0f1724;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+</style>
+</head>
+<body>
+
+<!-- Simple Owl SVG -->
+<svg width="260" height="260" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="120" cy="120" r="100" fill="#071428" />
+
+  <!-- Body -->
+  <g transform="translate(40,40)">
+    <ellipse cx="80" cy="80" rx="60" ry="70" fill="#2a2f3a"/>
+
+    <!-- Belly -->
+    <ellipse cx="80" cy="95" rx="40" ry="48" fill="#f3a712"/>
+
+    <!-- Wings -->
+    <path d="M20 85 C5 65, 20 45, 40 70 C30 80, 23 90, 20 85" fill="#24313d"/>
+    <path d="M140 85 C155 65, 140 45, 120 70 C130 80, 137 90, 140 85" fill="#24313d"/>
+
+    <!-- Beak -->
+    <polygon points="75,70 90,86 60,86" fill="#ff9f1c"/>
+
+    <!-- Eyes -->
+    <g transform="translate(40,40)">
+      <!-- Left -->
+      <g transform="translate(10,0)">
+        <circle cx="18" cy="18" r="18" fill="#fff"/>
+        <circle cx="18" cy="18" r="10" fill="#0b1220"/>
+      </g>
+      <!-- Right -->
+      <g transform="translate(56,0)">
+        <circle cx="18" cy="18" r="18" fill="#fff"/>
+        <circle cx="18" cy="18" r="10" fill="#0b1220"/>
+      </g>
+    </g>
+  </g>
+</svg>
+
+</body>
+</html>
