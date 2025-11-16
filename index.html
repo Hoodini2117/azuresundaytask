@@ -10,15 +10,33 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+    gap: 80px;
     height: 100vh;
+  }
+
+  .circle {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: #071428;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px #0008;
+  }
+
+  svg {
+    width: 85%;
+    height: 85%;
   }
 </style>
 </head>
 <body>
 
-<!-- Owl -->
-<svg width="260" height="260" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
+<!-- Owl in Circle -->
+<div class="circle">
+<svg viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
   <circle cx="120" cy="120" r="100" fill="#071428" />
   <g transform="translate(40,40)">
     <ellipse cx="80" cy="80" rx="60" ry="70" fill="#2a2f3a"/>
@@ -38,24 +56,20 @@
     </g>
   </g>
 </svg>
+</div>
 
-<!-- Onion -->
-<svg width="260" height="260" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-  <!-- Onion Bulb -->
+<!-- Onion in Circle -->
+<div class="circle">
+<svg viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
   <ellipse cx="150" cy="170" rx="90" ry="110" fill="#c06" stroke="#803" stroke-width="6"/>
-
-  <!-- Onion Rings -->
   <ellipse cx="150" cy="170" rx="65" ry="85" fill="#e38" opacity="0.7"/>
   <ellipse cx="150" cy="170" rx="40" ry="55" fill="#f4a" opacity="0.6"/>
-
-  <!-- Root bottom -->
   <path d="M150 260 C140 275, 160 275, 150 260" fill="#662"/>
-
-  <!-- Green top leaves -->
   <path d="M150 60 C130 20, 140 0, 150 10 C160 0, 170 20, 150 60" fill="#6a4"/>
   <path d="M150 60 C170 20, 180 0, 190 20 C185 10, 180 40, 150 60" fill="#5c8"/>
   <path d="M150 60 C130 20, 120 0, 110 20 C120 5, 130 35, 150 60" fill="#7a6"/>
 </svg>
+</div>
 
 </body>
 </html>
