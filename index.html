@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Owl</title>
+<title>Owl and Onion</title>
 <style>
   body {
     margin: 0;
@@ -10,44 +10,51 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 60px;
     height: 100vh;
   }
 </style>
 </head>
 <body>
 
-<!-- Simple Owl SVG -->
+<!-- Owl -->
 <svg width="260" height="260" viewBox="0 0 240 240" xmlns="http://www.w3.org/2000/svg">
   <circle cx="120" cy="120" r="100" fill="#071428" />
-
-  <!-- Body -->
   <g transform="translate(40,40)">
     <ellipse cx="80" cy="80" rx="60" ry="70" fill="#2a2f3a"/>
-
-    <!-- Belly -->
     <ellipse cx="80" cy="95" rx="40" ry="48" fill="#f3a712"/>
-
-    <!-- Wings -->
     <path d="M20 85 C5 65, 20 45, 40 70 C30 80, 23 90, 20 85" fill="#24313d"/>
     <path d="M140 85 C155 65, 140 45, 120 70 C130 80, 137 90, 140 85" fill="#24313d"/>
-
-    <!-- Beak -->
     <polygon points="75,70 90,86 60,86" fill="#ff9f1c"/>
-
-    <!-- Eyes -->
     <g transform="translate(40,40)">
-      <!-- Left -->
       <g transform="translate(10,0)">
         <circle cx="18" cy="18" r="18" fill="#fff"/>
         <circle cx="18" cy="18" r="10" fill="#0b1220"/>
       </g>
-      <!-- Right -->
       <g transform="translate(56,0)">
         <circle cx="18" cy="18" r="18" fill="#fff"/>
         <circle cx="18" cy="18" r="10" fill="#0b1220"/>
       </g>
     </g>
   </g>
+</svg>
+
+<!-- Onion -->
+<svg width="260" height="260" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Onion Bulb -->
+  <ellipse cx="150" cy="170" rx="90" ry="110" fill="#c06" stroke="#803" stroke-width="6"/>
+
+  <!-- Onion Rings -->
+  <ellipse cx="150" cy="170" rx="65" ry="85" fill="#e38" opacity="0.7"/>
+  <ellipse cx="150" cy="170" rx="40" ry="55" fill="#f4a" opacity="0.6"/>
+
+  <!-- Root bottom -->
+  <path d="M150 260 C140 275, 160 275, 150 260" fill="#662"/>
+
+  <!-- Green top leaves -->
+  <path d="M150 60 C130 20, 140 0, 150 10 C160 0, 170 20, 150 60" fill="#6a4"/>
+  <path d="M150 60 C170 20, 180 0, 190 20 C185 10, 180 40, 150 60" fill="#5c8"/>
+  <path d="M150 60 C130 20, 120 0, 110 20 C120 5, 130 35, 150 60" fill="#7a6"/>
 </svg>
 
 </body>
