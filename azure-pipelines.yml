@@ -1,0 +1,53 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  name: 'Agent hoodini'
+
+variables:
+  storageAccountName: hoodinistorage
+  resourceGroup: rg-1
+
+steps:
+- checkout: self
+
+- task: AzureCLI@2
+  displayName: 'Deploy Static Website to Storage Account'
+  inputs:
+    azureSubscription: 'hoodnet'
+    scriptType: bash
+    scriptLocation: inlineScript
+    inlineScript: |
+      echo "Getting Storage Account Key..."
+      KEY=$(az storage account keys list \
+        --resource-group $(resourceGroup) \
+        --account-name $(storageAccountName) \
+        --query [0].value -o tsv)
+
+      echo "Uploading website files to \$web container..."
+
+      az storage blob upload-batch \
+        --account-name $(storageAccountName) \
+        --account-key "$KEY" \
+        --destination '$web' \
+        --source $(Build.SourcesDirectory) \
+        --overwrite true
+
+      echo "Deployment completed successfully!"
